@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 50th Birthday Mum 👑</title>
+
+<style>
+
+/* COLOR THEME VARIABLES */
+:root {
+    --gold: #d4af37;
+    --pink: #f8c8dc;
+    --deep-pink: #e75480;
+    --white: #ffffff;
+}
+
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--pink), var(--white));
+    overflow-x: hidden;
+    text-align: center;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    padding: 40px 10px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+header h1 {
+    color: var(--gold);
+    font-size: 3em;
+}
+
+header h2 {
+    color: var(--deep-pink);
+}
+
+/* MUSIC BUTTONS */
+.music-controls button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: 2px solid var(--gold);
+    border-radius: 30px;
+    background: var(--white);
+    color: var(--gold);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.music-controls button:hover {
+    background: var(--gold);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+/* SLIDESHOW */
+.slideshow-container {
+    position: relative;
+    max-width: 50%;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* FULL IMAGE ALWAYS SHOWS */
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(212,175,55,0.6);
+}
+
+/* UNIQUE TRANSITIONS */
+.fade { animation: fade 2s; }
+.zoom { animation: zoom 2s; }
+.slide-left { animation: slideLeft 2s; }
+.slide-right { animation: slideRight 2s; }
+.rotate { animation: rotate 2s; }
+.scale-up { animation: scaleUp 2s; }
+.flip { animation: flip 2s; }
+.blur { animation: blur 2s; }
+.bounce { animation: bounce 2s; }
+
+@keyframes fade { from{opacity:0;} to{opacity:1;} }
+@keyframes zoom { from{transform:scale(0.6);} to{transform:scale(1);} }
+@keyframes slideLeft { from{transform:translateX(-100%);} to{transform:translateX(0);} }
+@keyframes slideRight { from{transform:translateX(100%);} to{transform:translateX(0);} }
+@keyframes rotate { from{transform:rotate(-180deg);} to{transform:rotate(0);} }
+@keyframes scaleUp { from{transform:scale(0);} to{transform:scale(1);} }
+@keyframes flip { from{transform:rotateY(90deg);} to{transform:rotateY(0);} }
+@keyframes blur { from{filter:blur(20px);} to{filter:blur(0);} }
+@keyframes bounce {
+    0%{transform:translateY(-100px);}
+    50%{transform:translateY(20px);}
+    100%{transform:translateY(0);}
+}
+
+/* NAV BUTTONS */
+.nav-buttons button {
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 2px solid var(--gold);
+    background: var(--white);
+    color: var(--gold);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* MESSAGE SECTION */
+.message {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(212,175,55,0.4);
+    line-height: 1.9;
+    font-size: 18px;
+    color: #444;
+}
+
+.message h2 {
+    color: var(--deep-pink);
+}
+
+/* BALLOONS */
+.balloon {
+    position: fixed;
+    bottom: -150px;
+    width: 40px;
+    height: 60px;
+    border-radius: 50%;
+    animation: floatUp 12s infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-120vh);}
+}
+
+/* CONFETTI */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+    0% {transform: translateY(0) rotate(0);}
+    100% {transform: translateY(110vh) rotate(360deg);}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>👑 Happy 50th Birthday Mum 👑</h1>
+    <h2>Celebrating 50 Golden Years of Love & Grace 💖</h2>
+</header>
+
+<div class="music-controls">
+    <button onclick="playMusic()">▶ Play Music</button>
+    <button onclick="pauseMusic()">⏸ Pause Music</button>
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="Baba-We-Thank-You-O-NATHANIEL-BASSEY-Babawethankyouo-hallelujahchallenge-worship-2025.mp3" type="audio/mp3">
+</audio>
+
+<div class="slideshow-container">
+    <div class="slide fade"><img src="IMG_8826.JPG"></div>
+    <div class="slide zoom"><img src="IMG_8827.JPG"></div>
+    <div class="slide slide-left"><img src="IMG_8828.JPG"></div>
+    <div class="slide slide-right"><img src="IMG_8829.JPG"></div>
+    <div class="slide rotate"><img src="IMG_8830.JPG"></div>
+    <div class="slide scale-up"><img src="IMG_8831.JPG"></div>
+    <div class="slide flip"><img src="IMG_8832.JPG"></div>
+    <div class="slide blur"><img src="IMG_8833.JPG"></div>
+    <div class="slide bounce"><img src="IMG_8834.JPG"></div>
+    <div class="slide fade"><img src="IMG_8835.JPG"></div>
+    <div class="slide zoom"><img src="IMG_8836.JPG"></div>
+    <div class="slide slide-left"><img src="IMG_8837.JPG"></div>
+    <div class="slide slide-right"><img src="IMG_8838.JPG"></div>
+    <div class="slide rotate"><img src="IMG_8839.JPG"></div>
+</div>
+
+<div class="nav-buttons">
+    <button onclick="prevSlide()">⬅ Previous</button>
+    <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<div class="message">
+    <h2>💖 From Your Loving Children 💖</h2>
+
+    <p>Mum, today we rise to celebrate a woman of gold. Fifty beautiful years of strength, resilience, sacrifice, and unconditional love.</p>
+
+    <p>You are our foundation. You are the voice that prayed over us before we even understood what prayer meant. You are the hands that lifted us, corrected us, encouraged us, and never gave up on us.</p>
+
+    <p>Thank you for every silent sacrifice. Thank you for every tear you wiped away. Thank you for choosing us daily. We are who we are because of your love.</p>
+
+    <p>As you enter this golden season, we pray that God crowns you with divine health, long life, peace that surpasses understanding, and joy that never runs dry.</p>
+
+    <p>And today, we smile knowing that heaven is also smiling. Dad would be so proud of the incredible woman you are, and we know his love still surrounds you in quiet strength and warmth.</p>
+
+    <p>May your latter years be greater than your former. May laughter fill your home. May your heart always be light. May everything you sacrificed for return to you multiplied.</p>
+
+    <p>We celebrate you. We honour you. We love you beyond words.</p>
+
+    <p>Happy Golden 50th Birthday our Beautiful Queen and Mum 👑💖</p>
+</div>
+
+<script>
+
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+    slides.forEach(slide => slide.style.display = "none");
+    slideIndex = (index + slides.length) % slides.length;
+    slides[slideIndex].style.display = "block";
+}
+
+function nextSlide() { showSlide(slideIndex + 1); }
+function prevSlide() { showSlide(slideIndex - 1); }
+
+setInterval(nextSlide, 6000);
+showSlide(slideIndex);
+
+function playMusic() {
+    document.getElementById("bgMusic").play();
+}
+
+function pauseMusic() {
+    document.getElementById("bgMusic").pause();
+}
+
+/* GOLD + PINK BALLOONS */
+const balloonColors = ["#d4af37", "#f8c8dc", "#e75480", "#ffffff"];
+
+for (let i = 0; i < 20; i++) {
+    let balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+    balloon.style.left = Math.random() * 100 + "vw";
+    balloon.style.background = balloonColors[Math.floor(Math.random()*balloonColors.length)];
+    balloon.style.animationDuration = (8 + Math.random()*6) + "s";
+    document.body.appendChild(balloon);
+}
+
+/* GOLD CONFETTI */
+for (let i = 0; i < 100; i++) {
+    let confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.background = balloonColors[Math.floor(Math.random()*balloonColors.length)];
+    confetti.style.animationDuration = (3 + Math.random()*5) + "s";
+    document.body.appendChild(confetti);
+}
+
+</script>
+
+</body>
+</html>
